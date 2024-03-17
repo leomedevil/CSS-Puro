@@ -1,0 +1,220 @@
+@font-face {
+    font-family:'GameBoy';
+    src: url(/font/Early\ GameBoy.ttf);
+}
+@font-face {
+    font-family: 'pixely';
+    src: url(/font/pixely[1].ttf);
+}
+*{
+    margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+    font-family: GameBoy ,pixely;
+}
+::selection{
+    background-color: #8054f0;
+    color: #ddd2f7;
+}
+body{
+    background-color:#d2c6ef;
+	min-height: 100vh;
+}
+
+header{
+    margin-top: 2rem;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: end;
+    height: 100px;
+}
+.bordes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    background-color: #ddd2f7;
+    border: double 15px #8468cb;
+    border-radius: .5rem;
+    box-shadow: 2px 3px 5px rgba(31, 31, 31, 0.5);
+    transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.bordes:hover{
+    background-color:#8468cb ;
+
+}
+.tag::before{
+    content: "CALCULADORA";
+    padding:1rem ;
+    color: #8468cb;
+	font-size: 28px;
+	margin-left: .5rem;
+    transition: all 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+.tag:hover::before{
+    font-size: 25px;
+    content: "@LeomeDevil";
+    color: white;
+}
+
+main{
+	display: grid;
+    place-items: center;
+}
+.calculadora{
+    position: relative;
+    background-color: #5735AC;
+    color: white;
+    width: 350px;
+    height: 571px;
+    max-width: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 2px 3px 5px rgba(31, 31, 31, 0.5);
+}
+.pantallas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Conteiner{
+    position: absolute;
+    max-height: 6rem;
+    width: 18rem;
+    background-color: #ddd2f7;
+    color: #2b0097c3;
+    border-radius: .5rem;
+    margin: .5rem .5rem 1.5rem .5rem;
+    font-weight: 600;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 12px #8468cb;
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+    align-items:end;
+    justify-content: space-between;
+
+}
+.pantalla2{
+    width: 100%;
+    max-height: 10rem;
+    height: 6rem;
+    padding: 1.5rem;
+    margin: .5rem .5rem 2rem .5rem;
+}
+.pantallaDos{
+    height: 10rem;
+    margin-top: 10px;
+    margin-right: 5px;
+    font-size: 16px;
+    color:#2b009777 ;
+}
+.pantallaUno{
+    padding-block: .5rem;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    font-size: 30px;
+}
+
+.teclado{
+    height: 400px;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .5rem;
+    padding: .5rem;
+    position: absolute;
+    z-index: 12;
+}
+.btn{
+    background-color: transparent;
+    color: white;
+    border: 0;
+    padding: 1.5rem ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 1px 2px 0px 1px #251a4130 ,-2px -2px 2px 1px #8468cb15;
+}
+.btn:hover{
+    background-color: #2b00976c;
+}
+.btn:active{
+    background-color: #8054f0;
+}
+#borrar{
+    font-family: pixely;
+}
+#igual{
+    grid-column: span 2;
+
+    background-color: #6341b9;
+}
+#igual:hover{
+    background-color: #2b00976c;
+}
+#igual:active{
+    background-color: #8054f0;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8468cb;
+    height: 150px;
+    width: 100%;
+    margin-top: 100px;
+    overflow: hidden;
+    clip-path: polygon(100% 100%, 0% 100% , 0.00% 6.67%, 1.00% 6.65%, 2.00% 6.62%, 3.00% 6.56%, 4.00% 6.47%, 5.00% 6.37%, 6.00% 6.24%, 7.00% 6.09%, 8.00% 5.91%, 9.00% 5.73%, 10.00% 5.52%, 11.00% 5.30%, 12.00% 5.06%, 13.00% 4.81%, 14.00% 4.55%, 15.00% 4.29%, 16.00% 4.02%, 17.00% 3.74%, 18.00% 3.46%, 19.00% 3.18%, 20.00% 2.91%, 21.00% 2.64%, 22.00% 2.37%, 23.00% 2.12%, 24.00% 1.87%, 25.00% 1.64%, 26.00% 1.42%, 27.00% 1.22%, 28.00% 1.03%, 29.00% 0.87%, 30.00% 0.73%, 31.00% 0.60%, 32.00% 0.50%, 33.00% 0.42%, 34.00% 0.37%, 35.00% 0.34%, 36.00% 0.33%, 37.00% 0.35%, 38.00% 0.40%, 39.00% 0.46%, 40.00% 0.56%, 41.00% 0.67%, 42.00% 0.81%, 43.00% 0.96%, 44.00% 1.14%, 45.00% 1.33%, 46.00% 1.54%, 47.00% 1.77%, 48.00% 2.01%, 49.00% 2.26%, 50.00% 2.52%, 51.00% 2.79%, 52.00% 3.06%, 53.00% 3.34%, 54.00% 3.62%, 55.00% 3.90%, 56.00% 4.17%, 57.00% 4.44%, 58.00% 4.70%, 59.00% 4.96%, 60.00% 5.20%, 61.00% 5.43%, 62.00% 5.64%, 63.00% 5.84%, 64.00% 6.01%, 65.00% 6.17%, 66.00% 6.31%, 67.00% 6.43%, 68.00% 6.52%, 69.00% 6.59%, 70.00% 6.64%, 71.00% 6.66%, 72.00% 6.66%, 73.00% 6.64%, 74.00% 6.59%, 75.00% 6.51%, 76.00% 6.41%, 77.00% 6.29%, 78.00% 6.15%, 79.00% 5.99%, 80.00% 5.81%, 81.00% 5.61%, 82.00% 5.39%, 83.00% 5.16%, 84.00% 4.92%, 85.00% 4.67%, 86.00% 4.40%, 87.00% 4.13%, 88.00% 3.86%, 89.00% 3.58%, 90.00% 3.30%, 91.00% 3.02%, 92.00% 2.75%, 93.00% 2.48%, 94.00% 2.22%, 95.00% 1.97%, 96.00% 1.74%, 97.00% 1.51%, 98.00% 1.30%, 99.00% 1.11%, 100.00% 0.94%);
+}
+ a{
+    text-decoration: none;
+} 
+.redes{
+    width: ;
+    display: flex;
+    align-items: center;
+}
+.icon>img{
+    border-radius: 50%;
+    background-color: #8468cb;
+    transition: all .8s ease-in-out;
+    animation: relo 1s 10s  alternate infinite;
+
+}
+.icon>img:hover{
+    scale: 1.1;
+    border: solid 100vh #5735AC;
+    animation-play-state: paused;
+}
+.icon>img:active{
+    scale: .9;
+}
+
+@keyframes relo {
+    0%{
+        scale: 1.2;
+    }
+
+    100%{
+        scale: 1;
+    }
+}
+@media (max-width:600px){
+    .header{
+        margin-bottom: 0;
+        font-size: 20px;
+    }
+    main{
+        scale: 0.8;
+} 
+    footer{
+        margin-top: 0;
+    }
+}

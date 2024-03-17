@@ -1,0 +1,302 @@
+@font-face {
+    font-family:'GameBoy';
+    src: url(/font/Early\ GameBoy.ttf);
+}
+@font-face {
+    font-family: 'pixely';
+    src: url(/font/pixely[1].ttf);
+}
+
+*{
+    font-weight: bold;
+    color: #E2E2D6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background-color:#E4D5CF ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+
+}
+header{
+    margin-top: 10px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    font-family: 'GameBoy','pixely';
+    text-decoration: none;
+    color: #111;
+    font-size: 30px;
+    white-space: nowrap;
+
+    
+}
+.title::before{
+    content:'Mini Billar';
+    padding: .5rem;
+    border: 1.1rem double #AB7857;
+    border-radius: .5rem;
+    transition: all .8s ease;
+    box-shadow: 2px 3px 5px rgba(31, 31, 31, 0.5);
+
+}
+.title:hover:before{
+    content: '@LeomeDevil';
+    color: #E2E2D6;
+    background: #AB7857;
+
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mesa{
+    position: relative;
+    height: 400px;
+    width: 600px;
+    min-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 10px solid #55685441;
+    background-color:#3E4F3D ;
+    box-shadow: 0px 0px 0px 30px #AB7857;
+    border-radius: 15px;
+    margin: 50px;
+}
+.containerPalo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 100%;
+    z-index: 999999999999;
+
+}
+.palo{
+    position: absolute;
+    right: 40px;
+    background-color: #fff;
+    height: 5px;
+    width: 5px;
+    z-index: 99999;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
+
+}
+.palo::after{
+    content: "";
+    position: absolute;
+    top:  0%;
+    right: 5px;
+    height: 5px;
+    width: 150px;
+    background-color:#8D5325 ;
+    z-index: 999999;
+    box-shadow: -2px 3px 5px 0px rgba(0, 0, 0, 0.25);
+
+
+}
+.palo::before{
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 150px;
+    height: 8px;
+    width:  80px;
+    background-color:#000 ;
+    z-index: 9999999;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+
+}
+.bolas {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+.bolas>div{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0px 5px 20px -8px #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bolas>div>span{
+    padding: .5rem;
+    font-size: 10px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #E2E2D6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000d4;
+}
+#blanca{
+    background-color: #E2E2D6;
+}
+#azul{
+    background-color: #003BA1;
+}
+#roja{
+    background-color: #CA2626;
+}
+#negro{
+    background-color: #000000;
+}
+.hollo{
+    position: absolute;
+    right: -35px;
+    width: 45px;
+    height: 45px;
+    background-color: #111111;
+    border-radius: 50%;
+    z-index: 999999;
+}
+#Hdos{
+    left: -30px;
+}
+#Htres{
+    top: -20px;
+    left: -20px;
+}
+#Hcuatro{
+    top: -30px;
+    left: 46%;
+}
+#Hcinco{
+    top: -20px;
+    right: -20px;
+}
+#Hseis{
+    bottom: -20px;
+    right: -20px;
+}
+#Hsiet{
+    bottom: -30px;
+    left: 46%;
+}
+#Hoch{
+    bottom: -20px;
+    left: -20px;
+}
+@keyframes billar {
+    0%{
+    }
+    50%{
+        transform: rotateZ(-2deg);
+        translate: -100px;
+
+    }
+    100%{
+        translate: 55px;
+    }
+}
+@keyframes move {
+    0%{
+
+    }
+    100%{
+        translate: 240px;
+        rotate: 360deg;
+        box-shadow: 5px 5px 10px -8px #000000;
+
+    }
+}
+@keyframes paloM {
+    0%{
+        translate: 10px;
+    }
+    100%{
+        translate: -5px;
+
+    }
+}
+
+main:hover .containerPalo{
+    animation: paloM 1s alternate infinite;
+    
+}
+main:active .palo{
+    animation: billar .7s ease alternate;
+}
+main:active #blanca{
+    animation: move 3.5s .38s ease ;
+}
+main:active #negro{
+    animation: move 2s .51s ease ;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #AB7857;
+    height: 140px;
+    width: 100%;
+    margin-top: 100px;
+    overflow: hidden;
+    clip-path: polygon(100% 100%, 0% 100% , 0.00% 6.67%, 1.00% 6.65%, 2.00% 6.62%, 3.00% 6.56%, 4.00% 6.47%, 5.00% 6.37%, 6.00% 6.24%, 7.00% 6.09%, 8.00% 5.91%, 9.00% 5.73%, 10.00% 5.52%, 11.00% 5.30%, 12.00% 5.06%, 13.00% 4.81%, 14.00% 4.55%, 15.00% 4.29%, 16.00% 4.02%, 17.00% 3.74%, 18.00% 3.46%, 19.00% 3.18%, 20.00% 2.91%, 21.00% 2.64%, 22.00% 2.37%, 23.00% 2.12%, 24.00% 1.87%, 25.00% 1.64%, 26.00% 1.42%, 27.00% 1.22%, 28.00% 1.03%, 29.00% 0.87%, 30.00% 0.73%, 31.00% 0.60%, 32.00% 0.50%, 33.00% 0.42%, 34.00% 0.37%, 35.00% 0.34%, 36.00% 0.33%, 37.00% 0.35%, 38.00% 0.40%, 39.00% 0.46%, 40.00% 0.56%, 41.00% 0.67%, 42.00% 0.81%, 43.00% 0.96%, 44.00% 1.14%, 45.00% 1.33%, 46.00% 1.54%, 47.00% 1.77%, 48.00% 2.01%, 49.00% 2.26%, 50.00% 2.52%, 51.00% 2.79%, 52.00% 3.06%, 53.00% 3.34%, 54.00% 3.62%, 55.00% 3.90%, 56.00% 4.17%, 57.00% 4.44%, 58.00% 4.70%, 59.00% 4.96%, 60.00% 5.20%, 61.00% 5.43%, 62.00% 5.64%, 63.00% 5.84%, 64.00% 6.01%, 65.00% 6.17%, 66.00% 6.31%, 67.00% 6.43%, 68.00% 6.52%, 69.00% 6.59%, 70.00% 6.64%, 71.00% 6.66%, 72.00% 6.66%, 73.00% 6.64%, 74.00% 6.59%, 75.00% 6.51%, 76.00% 6.41%, 77.00% 6.29%, 78.00% 6.15%, 79.00% 5.99%, 80.00% 5.81%, 81.00% 5.61%, 82.00% 5.39%, 83.00% 5.16%, 84.00% 4.92%, 85.00% 4.67%, 86.00% 4.40%, 87.00% 4.13%, 88.00% 3.86%, 89.00% 3.58%, 90.00% 3.30%, 91.00% 3.02%, 92.00% 2.75%, 93.00% 2.48%, 94.00% 2.22%, 95.00% 1.97%, 96.00% 1.74%, 97.00% 1.51%, 98.00% 1.30%, 99.00% 1.11%, 100.00% 0.94%);
+}
+
+a{
+   text-decoration: none;
+} 
+.icon>img{
+   border-radius: 50%;
+   transition: all .8s ease-in-out;
+   animation: git 1s 10s  alternate infinite;
+
+}
+.icon>img:hover{
+   scale: 1.1;
+   border: solid 100vh#8D5325;
+   animation-play-state: paused;
+}
+.icon>img:active{
+   scale: .9;
+}
+
+@keyframes git {
+   0%{
+       scale: 1.1;
+   }
+
+   100%{
+       scale: 1;
+   }
+}
+@media (max-width:600px){
+    header{
+        display: flex;
+        align-items: end;
+    }
+    .title{
+        font-size: 20px;
+    }
+    main{
+        scale: 0.5;
+}
+    .containerPalo{
+    animation: paloM 1s alternate infinite;
+}
+    footer{
+        margin: 0;
+}
+}
