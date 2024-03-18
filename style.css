@@ -36,10 +36,19 @@ h1{
     transition: all .8s ease;
 }
 
+
 h1{
     animation: css 3s  1.8s alternate ease infinite;
 }
-
+#A{
+    animation: color1 1s ease ;
+}
+#R{
+    animation: color2 1s .2s ease ;
+}
+#T{
+    animation: color3 1s .4s ease ;
+}
 @keyframes css {
     0%{
 
@@ -47,6 +56,30 @@ h1{
 
     100%{   
         scale: .9;
+    }
+}
+@keyframes color1{
+    0%{
+
+    }
+    100%{
+        color: #e56128c4;
+    }
+}
+@keyframes color2{
+    0%{
+
+    }
+    100%{
+        color: #159BD3;
+    }
+}
+@keyframes color3{
+    0%{
+
+    }
+    100%{
+        color: #F4D13C;
     }
 }
 
